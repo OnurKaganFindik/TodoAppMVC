@@ -12,10 +12,12 @@ namespace TodoAppMVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly DatabaseContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,DatabaseContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
